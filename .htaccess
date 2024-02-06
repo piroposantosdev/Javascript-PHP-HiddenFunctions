@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^d1$ main.php [L]
+RewriteRule ^x1$ scripts/newscript.php [L]
+
+Header unset X-Powered-By

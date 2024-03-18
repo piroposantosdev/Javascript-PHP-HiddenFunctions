@@ -1,29 +1,29 @@
 <html>
 	<head>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/sre4CwWlt6X4KpZKw6JAgpjC8PeK1KkqmLr/rOeb18=" crossorigin="anonymous"></script>
-		<script>
-		$(document).ready(function() {						
-			var xhr = new XMLHttpRequest();
-			xhr.open('GET', './d1', true); //Request to the rewritten URL to prevent easy file identification, ./d1 will redirect to another page written in .htaccess file
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState == 4) {
-					if (xhr.status == 200) {
-						var content = xhr.responseText;						
-						if (content != "error") {
-							var content = xhr.getResponseHeader('data');													
-							eval(eval(content));
-						} else {
-							//Here you can redirect page, console, etc
-							console.log("Error Page");
+		<script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>		
+		<script id="tohide">
+			$(document).ready(function() {						
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', './d1', true); //Request to the rewritten URL to prevent easy file identification, ./d1 will redirect to another page written in .htaccess file
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState == 4) {
+						if (xhr.status == 200) {
+							var content = xhr.responseText;						
+							if (content != "error") {
+								var content = xhr.getResponseHeader('data');													
+								eval(eval(content));
+							} else {
+								//Here you can redirect page, console, etc
+								console.log("Error Page");
+							}
 						}
 					}
-				}
-			};
-			xhr.send();
-		});
+				};
+				xhr.send();												
+			});	
 		</script>
 	</head>
 	<body>
-		<!-- Your content goes here -->
+		<div id="base"></div>
 	</body>
 </html>
